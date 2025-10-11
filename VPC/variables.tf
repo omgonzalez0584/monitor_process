@@ -9,3 +9,12 @@ variable "aws_profile" {
   description = "Aws profile credential"
   default     = "awsqa"
 }
+
+variable "virginia" {
+  type = object({
+    name        : string
+    vpc_cidr   : list(string)
+    environment : string
+  })
+
+}

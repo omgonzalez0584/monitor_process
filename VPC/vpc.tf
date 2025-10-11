@@ -1,10 +1,10 @@
 resource "aws_vpc" "vpc_virginia" {
-  cidr_block       = "10.10.0.0/16"
+  cidr_block       = var.virginia.vpc_cidr[0]
   instance_tenancy = "default"
 
   tags = {
-    Name = "vpc-virginia"
-    name = "IaC-vpc-virginia"
-    environment = "dev"
+    Name = var.virginia.name
+    name = var.virginia.name
+    environment = var.virginia.environment
   }
 }
